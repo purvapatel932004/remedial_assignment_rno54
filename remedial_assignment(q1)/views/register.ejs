@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h2>Developer Registration</h2>
+  <form action="/register" method="POST" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="registrationCode">Registration Code:</label>
+    <input type="text" id="registrationCode" name="registrationCode" required><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required><br>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required><br>
+
+    <label for="degree">Degree(s):</label><br>
+    <input type="checkbox" name="degree" value="B.Sc"> B.Sc<br>
+    <input type="checkbox" name="degree" value="B.Tech"> B.Tech<br>
+    <input type="checkbox" name="degree" value="M.Sc"> M.Sc<br>
+    <input type="checkbox" name="degree" value="Ph.D"> Ph.D<br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <label for="files">Upload Files:</label>
+    <input type="file" id="files" name="files" multiple><br>
+
+    <button type="submit">Register</button>
+  </form>
+  <p>Already have an account? <a href="/login">Login here</a></p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developers</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>All Developers</h1>
+    <a href="/">Home</a> | <a href="/logout">Logout</a>
+  </header>
+  <main>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Registration Code</th>
+        <th>Date of Birth</th>
+        <th>City</th>
+        <th>Degree</th>
+        <th>Actions</th>
+      </tr>
+      <% developers.forEach(developer => { %>
+      <tr>
+        <td><%= developer.name %></td>
+        <td><%= developer.registrationCode %></td>
+        <td><%= developer.dob.toDateString() %></td>
+        <td><%= developer.city %></td>
+        <td><%= developer.degree.join(', ') %></td>
+        <td>
+          <a href="/developer/<%= developer._id %>">View</a> |
+          <a href="/developer/edit/<%= developer._id %>">Edit</a> |
+          <a href="/developer/delete/<%= developer._id %>" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+  </main>
+</body>
+</html>

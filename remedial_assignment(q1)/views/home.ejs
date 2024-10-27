@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  
+</head>
+<body>
+  <header>
+    <h1>Welcome to Developer Portal</h1>
+    <% if (user) { %>
+      <p>Hello, <%= user.name %>! | <a href="/logout">Logout</a></p>
+    <% } else { %>
+      <p><a href="/login">Login</a> | <a href="/register">Register</a></p>
+    <% } %>
+  </header>
+
+  <main>
+    <h2>Suggested Developers from <%= user.city %>:</h2>
+    <ul>
+      <% suggestions.forEach(developer => { %>
+        <li><%= developer.name %> - <%= developer.registrationCode %></li>
+      <% }) %>
+    </ul>
+  </main>
+</body>
+</html>
+
